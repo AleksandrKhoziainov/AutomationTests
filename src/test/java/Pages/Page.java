@@ -24,7 +24,7 @@ public class Page {
     public By passwordTextFieldLocator = By.xpath("//input[@type='password']");
     public String correctEmail = "test@protei.ru";
     public String correctPassword = "test";
-    public String htmlLocation = "C://Users//Khozi//qa-test.html";
+    public String htmlLocation = "\\resources\\qa-test.html";
 
     public void inputCorrectEmail() {
         driver.findElement(emailTextFieldLocator).sendKeys(correctEmail);
@@ -41,6 +41,6 @@ public class Page {
     }
 
     public void open() {
-        driver.get(htmlLocation);
+        driver.get("file:" + System.getProperty("user.dir") + htmlLocation);
     }
 }
